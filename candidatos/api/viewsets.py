@@ -22,5 +22,5 @@ class CandidateViewSet(ModelViewSet):
         
 class GenerateReport(generics.ListAPIView):
     serializer_class = ReportSerializer
-    queryset = Candidate.objects.all()
+    queryset = Candidate.objects.all().order_by("-votes")
 
